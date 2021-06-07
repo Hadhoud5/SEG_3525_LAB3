@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<style>
+body {
+  background-image: url('groceries.jpg');
+</style>
+
+
+<body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="topnav" id="myTopnav">
+  <a href="#Acceuil" class="active">Home</a>
+  <a href="#Client"onclick="openInfo(event, 'Client')">Client</a>
+  <a href="#Produits"onclick="openInfo(event, 'Products')">Products</a>
+  <a href="#Panier"onclick="openInfo(event, 'Cart')">Cart</a>
+  <a href="javascript:void(0);" class="icon" onclick="openInfo()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<h1>Site d'épicerie en ligne</h1>
+
+
+
+<!-- Tab content -->
+<div id="Client" class="tabcontent">
+  <h3>Informations sur le client</h3>
+  <p>Dites nous en plus sur vous</p>
+	Selectionnez un parametre:
+	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+	<option value=""></option>
+	<option value="NutFree">NutFree</option>
+    <option value="LactoseFree">LactoseFree</option>
+    		<option value="Include Baby supplies">Babysupplies</option>
+       		<option value="Include carrot">Products without carrot</option>
+    <option value="None">None</option>
+	</select>
+	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+	<option value="Organic"></option>
+	<option value="NonOrganic">NonOrganic</option>
+    <option value="Organic">Organic</option>
+    </select>
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3>Produits selectionnés pour vous</h3>
+  <p>Nous avons établis une liste de produits selon vos restrictions.</p>
+	 Selectionnez les objets a acheter:
+	 <div id="displayProduct"></div>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Ajouter au panier.
+	</button>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3>Cart</h3>
+  <p>Voici votre panier.</p>
+  <div id="displayCart"></div>
+</div>
+
+
+
+
+
+
+
+<footer>
+<p>
+<p>
+<p>
+<p>Site créé par Hedi Ben Abid</p>
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
